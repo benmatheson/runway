@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i|IBM+Plex+Serif:400,400i" rel="stylesheet">
+
+                <script src="js/vendor/d3/d3.min.js"></script>
+
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+<div id="main" class="fill"></div>
+<h1 id="dark">WHERE THE RUNWAYS RUN</h1>
+
+
+<p class="sub">Analyzing more than 1,000 airport runways across the United States.</p>
+
+
+
+
+
+
+<h1>Airstrip to Airstrip Across America</h1>
+<p>The Bureau of Transportation Statistics maintains a database of more than 23,0000 runways (or 46,696 as it counts each approach to a runway as in individual runway). This visualization uses only the records that have complete orientation data and runway lengths.  </p>
+
+<div class="pic"></div>
+
+<img src="data/usa1.jpeg">
+<img src="data/AK1.jpeg">
+        <h1>Our (Mostly) Orderly Runway Alignment</h1>
+<p>This dataset includes more than seven million feet of runway or some 1,325 miles in all 50 states. There is obvious clustering around cardinal directions: (North, South, East, West), in particular North-South and East-West alignments. </p>
+<div id="group"></div>
+
+<h1>Runway Bearings by Length</h1>
+
+<div class="gridCont">
+    
+    <div class="gridItem" id="g1"><h2>Less than 4,000 Feet</h2></div>
+    <div class="gridItem" id="g2"><h2>4,000 - 6,000 Feet</h2></div>
+    <div class="gridItem" id="g3"><h2>6,000 - 8,000</h2></div>
+    <div class="gridItem" id="g4"><h2>8,000 - 10,000 Feet</h2></div>
+    <div class="gridItem" id="g5"><h2>10,000 - 12,000 Feet</h2></div>
+    <div class="gridItem" id="g6"><h2>Longer than 12,000 Feet</h2></div>
+</div>
+
+<div>
+    <h1 class="barHead">1,028 Runway Lengths</h1>
+</div>    
+
+
+<div id="bar"></div>
+
+<div id="footer" style="text-align: center">
+<p>
+    <p>Data from U.S. Department of Transportation <a href="https://osav-usdot.opendata.arcgis.com/datasets/d9bb4badb2e247238db55c92ef1fd362_0" target="_blank">Bureau of Transportation Statistics</a>
+    <br /><br />A project by <a href="https://benmatheson.github.io" target="_blank">Ben Matheson.</a>
+ <br /><br />
+    <a href="https://d3js.org/" target="_blank">D3</a> powers all data visualizations. 
+Scroll effects utilize the <a href="http://scrollmagic.io/" target="_blank">ScrollMagic library.</a>
+<br /><br />
+
+
+Spatial data from  <a href="http://www.naturalearthdata.com/downloads/" target="_blank">Natural Earth</a> 
+
+Data processing was done in R, heavily utilizing the tidyverse family of libraries.
+
+
+</p>
+</div>
+
+
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>
