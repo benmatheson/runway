@@ -61,14 +61,27 @@ svgG.selectAll('line')
 
 function mini (div, dataName, color) {
 
+		// d3.select(`'.${dataName}'`).remove();
+	// 	d3.select('#g1').remove();
+	// 	d3.select('#g2').remove();
+	// 	d3.select('#g3').remove();
+	// d3.select('#g4').remove();
+	// 	d3.select('#g5').remove();
+		// d3.select(`'.${dataName}'`).remove();
+		d3.select(svg1).remove();
+
+// d3.select(div).remove();
+
 var svg1 = d3.select(div)
   .append('svg')
   .attr("width", "100%")  
   .attr("height", "100%")
-// .attr("class", "fill");
+// .attr("class", `'${dataName}'`);
 
 
-var svgG1 = svg1.append('g');
+var svgG1 = svg1.append('g')
+.attr("class", "mult1")
+.attr("class", dataName)
 
 svgG1.selectAll('line')
 	.data(dataName)
@@ -80,6 +93,8 @@ svgG1.selectAll('line')
    .attr("opacity", .3) // colour the line
   .attr("x1", 0)
   .attr("y1", 0)
+  .attr("class", "mult1")
+
   // .attr('transform', d=>'translate(500,400)rotate('+0+')')
   .attr('transform', d=>'translate(180,190)rotate('+(d.trueNorm)+')')
 
@@ -102,7 +117,25 @@ svgG1.selectAll('line')
 
 }
 
+var scene2 = new ScrollMagic.Scene({
 
+			triggerElement: "#trigger2",
+			duration: 900}).addTo(controller)
+	// .setClassToggle("#bars", "fade")
+		.on("start", function () {
+				executeMult()});
+
+
+scene2.reverse(false);
+
+
+
+
+function executeMult () {
+
+
+d3.select('.mult1').remove();
+d3.select('line').remove();
 
 mini("#g1", data4, "#ccece6");
 mini("#g2", data6, "#ccebc5");
@@ -111,7 +144,7 @@ mini("#g4", data10,"#7bccc4");
 mini("#g5", data12,"43a2ca");
 mini("#g6", data16,"#0868ac");
 
-
+}
 
 
 var barSvg = d3.select('#bar')
@@ -144,7 +177,18 @@ console.log("col(2000");
   // 	.attr('r', (d,i) =>3)
 
 
+var scene3 = new ScrollMagic.Scene({
 
+			triggerElement: "#barTrigger",
+			duration: 900}).addTo(controller)
+	// .setClassToggle("#bars", "fade")
+		.on("start", function () {
+				executeBar()});
+
+
+scene3.reverse(false);
+
+function executeBar () {
   barSvgG.selectAll('rect')
   	.data(dataSort)
   	.enter()
@@ -173,8 +217,8 @@ console.log("col(2000");
 
 barSvgG.append('text')
 	.text( "4,000 Feet")
-	.attr("x", 510)
-  .attr("y", 400)
+	.attr("x", 250)
+  .attr("y", 440)
   .attr("class", "anno")
 
 
@@ -193,11 +237,7 @@ barSvgG.append('text')
 
 
 
-
-
-
-
-
+}
 
 
 
@@ -206,18 +246,32 @@ barSvgG.append('text')
 })
 
 
+
+
+
+
+function executeSum () {
+
 d3.csv("data/lengthSum.csv", function(data){
 
 
+console.log('execute func');
+
+
+d3.select('.sum').remove();
+// d3.select('g').remove();
+// .attr("class", "fill");
 var svg = d3.select('#group')
   .append('svg')
+  .attr("class", "sum")
   .attr("width", "900px")  
   .attr("height", "400px")
-// .attr("class", "fill");
+
+var svgG = svg.append('g')
+  .attr("class", "sum");
 
 
 
-var svgG = svg.append('g');
 
 
 svgG.selectAll('line')
@@ -225,9 +279,9 @@ svgG.selectAll('line')
 	.enter()
 	.append('line')
    .style("stroke", "black") 
-   .style("stroke-width", 3) 
+   .style("stroke-width", 6) 
    .style("stroke-linecap", "round") 
-   .attr("opacity", .1) // colour the line
+   .attr("opacity", .2) // colour the line
   .attr("x1", 0)
   .attr("y1", 0)
   .attr('transform', d=>'translate(500,400)rotate('+0+')')
@@ -238,7 +292,7 @@ svgG.selectAll('line')
 
       .attr("x2", d=> -d.len/1100)
 
-  .delay((d,i)=>i*40)
+  .delay((d,i)=>i*10)
 .attr('transform', d=>'translate(500,400)rotate('+d.trueNorm+')')
 
 
@@ -266,10 +320,19 @@ svgG.append('text')
   .attr("class", "anno")
 
 
-
 })
 
+}
 
+var controller = new ScrollMagic.Controller();
+
+	var scene1 = new ScrollMagic.Scene({
+
+			triggerElement: "#trigger1",
+			duration: 900}).addTo(controller)
+	// .setClassToggle("#bars", "fade")
+		.on("start", function () {
+				executeSum()});
 
 
 

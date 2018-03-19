@@ -29,7 +29,7 @@
 <h1 id="dark">WHERE THE RUNWAYS RUN</h1>
 
 
-<p class="sub">Analyzing more than 1,000 airport runways across the United States.</p>
+<p class="sub">Experimental visualization of more than 1,000 airport runways across the United States.</p>
 
 
 
@@ -43,11 +43,14 @@
 
 <img src="data/usa1.jpeg">
 <img src="data/AK1.jpeg">
+<div id="trigger1"></div>
         <h1>Our (Mostly) Orderly Runway Alignment</h1>
 <p>This dataset includes more than seven million feet of runway or some 1,325 miles in all 50 states. There is obvious clustering around cardinal directions: (North, South, East, West), in particular North-South and East-West alignments. </p>
+
 <div id="group"></div>
 
 <h1>Runway Bearings by Length</h1>
+<div id="trigger2"></div>
 
 <div class="gridCont">
     
@@ -59,6 +62,7 @@
     <div class="gridItem" id="g6"><h2>Longer than 12,000 Feet</h2></div>
 </div>
 
+<div id="barTrigger"></div>
 <div>
     <h1 class="barHead">1,028 Runway Lengths</h1>
 </div>    
@@ -86,6 +90,7 @@ Data processing was done in R, heavily utilizing the tidyverse family of librari
 
 
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>

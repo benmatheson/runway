@@ -87,7 +87,7 @@ p.sub {
     font-style: italic;
     padding-left: 2%;
     position: absolute;
-    top: 50%;
+    top: 57%;
 color: white;
 
 }
@@ -98,6 +98,7 @@ color: white;
 color: white;
 position: absolute;
 top: 10px; 
+font-size: 4rem;
 }
 
 
@@ -160,7 +161,7 @@ a {
 }
 img{
 
-max-width:50%;
+max-width:70%;
 height: auto;
 margin: auto;
 
